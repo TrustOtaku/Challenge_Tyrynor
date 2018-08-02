@@ -18,4 +18,17 @@ public class Window extends JFrame{
 		this.setContentPane(mainMenu);
 		this.setVisible(true);
 	}
+	
+	public void loop() {
+		while(true) {
+			try {
+				mainMenu.repaint();
+				Thread.sleep(1000/Fix.TARGETED_FPS);
+			}
+			catch (Exception e) {
+				//I DON T KNOW WHAT TO DO MOTHERFUCKER !!!!!!!!!!!!!!!!!!!!!
+			}
+		}
+	}
+	
 }
