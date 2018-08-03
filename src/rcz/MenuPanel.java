@@ -19,6 +19,7 @@ public class MenuPanel extends JPanel{
 		this.setPreferredSize(Fix.WINDOW_SIZE);
 		title= t;
 		choice= c;
+		
 	}
 	
 	public void paintComponent(Graphics g) {
