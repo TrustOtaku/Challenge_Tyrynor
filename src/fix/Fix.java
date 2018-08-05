@@ -10,6 +10,7 @@ public class Fix {
 	
 	public static final int TARGETED_FPS= 60;
 
-	public static final Font TITLE_FONT= new Font("TimesRoman", Font.ITALIC,16);
-	public static final Font DEFAULT_FONT= new Font("Dialog", Font.PLAIN,12);
+	public static final Font TITLE_FONT= new Font("TimesRoman", Font.BOLD+Font.ITALIC,64);
+	public static final Font DEFAULT_FONT= new Font("Dialog", Font.PLAIN,32);
+	public static final int POS_Y_MENU= 100;
 }
