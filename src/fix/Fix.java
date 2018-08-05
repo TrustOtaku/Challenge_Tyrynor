@@ -13,4 +13,7 @@ public class Fix {
 	public static final Font TITLE_FONT= new Font("TimesRoman", Font.BOLD+Font.ITALIC,64);
 	public static final Font DEFAULT_FONT= new Font("Dialog", Font.PLAIN,32);
 	public static final int POS_Y_MENU= 100;
+	
+	public static final String MAIN_MENU_TITLE= "Menu";
+	public static final String[] MAIN_MENU_CHOICES= {"Play", "Options", "Exit"};
 }

@@ -1,3 +1,4 @@
+package launcher;
 import rcz.Window;
 
 public class Launcher {

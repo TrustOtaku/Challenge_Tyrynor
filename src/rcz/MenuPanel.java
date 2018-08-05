@@ -13,13 +13,14 @@ public class MenuPanel extends JPanel{
 	private String title;
 	private String[] choice;
 	private int select=0;
+	private Window wd;
 	
-	public MenuPanel(String t, String[] c) {
+	public MenuPanel(Window w, String t, String[] c) {
 		this.setPreferredSize(Fix.WINDOW_SIZE);
 		title= t;
 		choice= c;
-		Window.getInstance().setActivePanel(this);
-		//this.setFont(new Font("Dialog", Font.PLAIN,32));
+		wd= w;
+		wd.setActivePanel(this);
 	}
 	
 	public void paintComponent(Graphics g) {
@@ -45,12 +46,11 @@ public class MenuPanel extends JPanel{
 	public void enterPressed() {
 		switch(select) {
 		case 0:
-			
 			break;
 		case 1:
 			break;
 		case 2:
-			Window.getInstance().exit();
+			wd.exit();
 		}
 	}
 }

@@ -9,7 +9,6 @@ import control.MenuControler;
 public class Window extends JFrame{
 	
 	private static int nbInstance=0;
-	private static Window wd=null;
 	
 	PrincipalPanel pPan;
 	JPanel activePanel;
@@ -25,15 +24,10 @@ public class Window extends JFrame{
 		if(nbInstance!=1) {
 			System.exit(0);
 		}
-		wd=this;
 		this.setVisible(true);
-		pPan= new PrincipalPanel();
+		pPan= new PrincipalPanel(this);
 		this.setContentPane(pPan);
 		
-	}
-	
-	public static Window getInstance() {
-		return wd;
 	}
 	
 	public void exit() {
@@ -47,7 +41,7 @@ public class Window extends JFrame{
 				Thread.sleep((int)(1000/Fix.TARGETED_FPS));
 			}
 			catch (Exception e) {
-				//I DON T KNOW WHAT TO DO MOTHERFUCKER !!!!!!!!!!!!!!!!!!!!!
+				e.printStackTrace();
 			}
 		}
 	}
@@ -59,6 +53,7 @@ public class Window extends JFrame{
 	//Setters qui add un nouveau KeyListener en consequence
 	public void setActivePanel(JPanel pan) {
 		activePanel=pan;
+		
 		switch(activePanel.getClass().getName()) {
 		case "rcz.MenuPanel":
 			this.addKeyListener(new MenuControler((MenuPanel)activePanel));
