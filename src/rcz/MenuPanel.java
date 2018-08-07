@@ -53,4 +53,10 @@ public class MenuPanel extends JPanel{
 			wd.exit();
 		}
 	}
+	
+	public void testF1() {
+		System.out.println("test en cours !");
+		InfoPanel test= new InfoPanel(wd);
+		this.add(test);
+	}
 }

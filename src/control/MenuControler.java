@@ -25,6 +25,9 @@ public class MenuControler implements KeyListener{
 		case KeyEvent.VK_ENTER:
 			menu.enterPressed();
 			break;
+		case KeyEvent.VK_F1:
+			menu.testF1();
+			System.out.println("F1 pressed !");
 		}
 		
 	}
