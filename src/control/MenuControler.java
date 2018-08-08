@@ -17,10 +17,10 @@ public class MenuControler implements KeyListener{
 	public void keyPressed(KeyEvent arg0) {
 		switch(arg0.getKeyCode()) {
 		case KeyEvent.VK_UP:
-			menu.moveSelect(menu.getSelect()-1);
+			menu.setSelect(menu.getSelect()-1);
 			break;
 		case KeyEvent.VK_DOWN:
-			menu.moveSelect(menu.getSelect()+1);
+			menu.setSelect(menu.getSelect()+1);
 			break;
 		case KeyEvent.VK_ENTER:
 			menu.enterPressed();

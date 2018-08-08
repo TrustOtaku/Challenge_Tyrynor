@@ -17,7 +17,7 @@ public class InfoPanel extends JPanel{
 	Window wd;
 	
 	public InfoPanel(Window w) {
-		this.setSize(50, 50);
+		this.setSize(200, 50);
 		this.setLocation(0, 0);
 		wd=w;
 		t0= new Date().getTime();

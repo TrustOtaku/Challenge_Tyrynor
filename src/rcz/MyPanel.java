@@ -2,27 +2,26 @@ package rcz;
 
 import javax.swing.JPanel;
 import java.awt.Color;
+import java.awt.Dimension;
 import java.awt.Graphics;
 
 public class MyPanel extends JPanel {
 
-	Color c;
-	int sX, sY, pX, pY;
+	protected int sX, sY, pX, pY;
+	protected Window wd;
 	
-	public MyPanel(int p_X, int p_Y, int s_X, int s_Y, Color color) {
+	protected MyPanel(Window w ,int p_X, int p_Y, int s_X, int s_Y) {
+		this.setLayout(null);
+		wd=w;
 		sX=s_X;
 		sY=s_Y;
 		pX=p_X;
 		pY=p_Y;
-		c=color;
-		this.setLayout(null);
 		this.setSize(sX,sY);
 		this.setLocation(pX, pY);
-		this.setBackground(c);
 	}
 	
-	public void paintComponent(Graphics g) {
-		g.setColor(c);
-		g.fillRect(0, 0, sX, sY);
+	protected MyPanel(Window w, int p_X, int p_Y, Dimension d) {
+		this(w ,p_X ,p_Y ,d.width ,d.height);
 	}
 }
