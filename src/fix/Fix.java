@@ -3,7 +3,6 @@ package fix;
 import java.awt.Dimension;
 import java.awt.Toolkit;
 import java.awt.Font;
-import java.awt.Graphics;
 
 public class Fix {
 	public static final String WINDOW_NAME= "The Drah-Nok Invasion";
@@ -16,4 +15,7 @@ public class Fix {
 	
 	public static final String MAIN_MENU_TITLE= "Menu";
 	public static final String[] MAIN_MENU_CHOICES= {"Play", "Options", "Exit"};
+	
+	public static final int MISSING_WIDTH= 2;
+	public static final int MISSING_HEIGHT= 65;
 }

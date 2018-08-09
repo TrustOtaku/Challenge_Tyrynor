@@ -1,20 +1,14 @@
 package rcz;
 
 import java.awt.Color;
-import java.awt.Dimension;
 import java.awt.Graphics;
 import java.util.Date;
-
-import javax.swing.JPanel;
-
-import fix.Fix;
 
 public class InfoPanel extends MyPanel{
 	
 	int nbOfRedraw;
 	int fps;
 	long t0, t1;
-	Window wd;
 	
 	protected InfoPanel(Window w) {
 		super(w, 0, 0, 128, 64);
