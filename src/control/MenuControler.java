@@ -3,31 +3,30 @@ package control;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
-import rcz.MenuPanel;
+import rcz.PrincipalPanel;
 
 public class MenuControler implements KeyListener{
 
-	private MenuPanel menu;
+	private PrincipalPanel pan;
 	
-	public MenuControler(MenuPanel m) {
-		menu=m;
+	public MenuControler(PrincipalPanel p) {
+		pan= p;
 	}
 	
 	@Override
 	public void keyPressed(KeyEvent arg0) {
 		switch(arg0.getKeyCode()) {
 		case KeyEvent.VK_UP:
-			menu.setSelect(menu.getSelect()-1);
+			pan.getMain().setSelect(pan.getMain().getSelect()-1);
 			break;
 		case KeyEvent.VK_DOWN:
-			menu.setSelect(menu.getSelect()+1);
+			pan.getMain().setSelect(pan.getMain().getSelect()+1);
 			break;
 		case KeyEvent.VK_ENTER:
-			menu.enterPressed();
+			pan.getMain().enterPressed();
 			break;
 		case KeyEvent.VK_F1:
-			menu.testF1();
-			System.out.println("F1 pressed !");
+			pan.switchInfoVisibility();
 		}
 		
 	}

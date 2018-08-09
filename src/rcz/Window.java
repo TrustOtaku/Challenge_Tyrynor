@@ -27,7 +27,7 @@ public class Window extends JFrame{
 		this.setVisible(true);
 		pPan= new PrincipalPanel(this);
 		this.setContentPane(pPan);
-		
+		this.setActivePanel(this.pPan.getMain());
 	}
 	
 	public void exit() {
@@ -56,7 +56,7 @@ public class Window extends JFrame{
 		
 		switch(activePanel.getClass().getName()) {
 		case "rcz.MenuPanel":
-			this.addKeyListener(new MenuControler((MenuPanel)activePanel));
+			this.addKeyListener(new MenuControler(pPan));
 			break;
 		}
 	}

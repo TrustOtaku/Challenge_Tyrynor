@@ -9,13 +9,14 @@ import javax.swing.JPanel;
 
 import fix.Fix;
 
-public class InfoPanel extends JPanel{
+public class InfoPanel extends MyPanel{
 	
 	int nbOfRedraw;
 	int fps;
 	long t0, t1;
 	Window wd;
 	
+	/*
 	public InfoPanel(Window w) {
 		this.setSize(200, 50);
 		this.setLocation(0, 0);
@@ -26,8 +27,14 @@ public class InfoPanel extends JPanel{
 		System.out.println("InfoPanel constructeur");
 		this.repaint();
 		System.out.println(t0);
-	}
+	}*/
 	
+	protected InfoPanel(Window w) {
+		super(w, 0, 0, 128, 64);
+		t0= new Date().getTime();
+		nbOfRedraw=0;
+	}
+
 	public void paintComponent(Graphics g) {
 		t1= new Date().getTime();
 		nbOfRedraw++;

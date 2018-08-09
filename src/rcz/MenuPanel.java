@@ -11,35 +11,40 @@ import fix.Fix;
 
 public class MenuPanel extends MyPanel{
 
-	//private Window wd;
-	private String title;
-	private String[] choice;
-	private int select=0;
-	private int strWidth;
-	/*
-	public MenuPanel(Window w, String t, String[] c) {
-		this.setSize(Fix.WINDOW_SIZE);
-		this.setLocation(0, 0);
-		title= t;
-		choice= c;
-		wd= w;
-		wd.setActivePanel(this);
-		strWidth=0;
-		this.repaint();
-		System.out.println("menu créé");
-		this.setBackground(Color.WHITE);
-	}
-	/**/
+	private String title;//En-tete du menu
+	private String[] choice;//liste des choix possibles
+	private int select;//choix sur lequel on est positionné
+	private int strWidth;//longueur en pixels d une str
+	private int totalWidth;//longueur totale en pixels du menu
+	private int totalHeight;//hauteur totale en pixels du menu
+	private boolean needSizeCalculation;
+	
 	public MenuPanel(Window w, int p_X, int p_Y, int s_X, int s_Y, String t, String[] c) {
 		super(w, p_X, p_Y, s_X, s_Y);
 		title= t;
 		choice= c;
-		wd.setActivePanel(this);
-		this.setBackground(Color.BLACK);
-		
+		select= 0;
+		needSizeCalculation=true;
 	}
-	/**/
+	
 	public void paintComponent(Graphics g) {
+		if(needSizeCalculation) {
+			//totalWidth calcul
+			totalWidth= g.getFontMetrics(Fix.TITLE_FONT).stringWidth(title);
+			System.out.println(totalWidth);
+			for(int i=0; i<choice.length; i++) {
+				strWidth= g.getFontMetrics(Fix.DEFAULT_FONT).stringWidth(choice[i]);
+				totalWidth= (totalWidth>strWidth)?totalWidth:strWidth;
+				System.out.println(totalWidth);
+			}
+			totalWidth+=100;
+			//totalHeight calcul
+			
+			
+			
+			//calcul terminé
+			needSizeCalculation=false;
+		}
 		g.setColor(Color.WHITE);
 		g.fillRect(0, 0, this.getWidth(), this.getHeight());
 		
@@ -50,15 +55,15 @@ public class MenuPanel extends MyPanel{
 		
 		g.setFont(Fix.DEFAULT_FONT);
 		for(int i=0; i<choice.length; i++) {
+			strWidth= g.getFontMetrics(Fix.DEFAULT_FONT).stringWidth(choice[i]);
+			g.drawString(choice[i], (int)(this.getWidth()-strWidth)/2, Fix.POS_Y_MENU+Fix.TITLE_FONT.getSize()+Fix.DEFAULT_FONT.getSize()*i);
 			if(i==select) {
-				strWidth= g.getFontMetrics(Fix.DEFAULT_FONT).stringWidth("*"+choice[i]+"*");
-				g.drawString("*"+choice[i]+"*", (int)(this.getWidth()-strWidth)/2, Fix.POS_Y_MENU+Fix.TITLE_FONT.getSize()+Fix.DEFAULT_FONT.getSize()*i);
-			}
-			else {
-				strWidth= g.getFontMetrics(Fix.DEFAULT_FONT).stringWidth(choice[i]);
-				g.drawString(choice[i], (int)(this.getWidth()-strWidth)/2, Fix.POS_Y_MENU+Fix.TITLE_FONT.getSize()+Fix.DEFAULT_FONT.getSize()*i);
+				g.drawString("*", (int)(this.getWidth()-strWidth)/2-Fix.TAILLE_ASTERISQUE, Fix.POS_Y_MENU+Fix.TITLE_FONT.getSize()+Fix.DEFAULT_FONT.getSize()*i);
+				g.drawString("*", (int)(this.getWidth()+strWidth)/2, Fix.POS_Y_MENU+Fix.TITLE_FONT.getSize()+Fix.DEFAULT_FONT.getSize()*i);
 			}
 		}
+		
+		g.drawRect((this.getWidth()-totalWidth)/2, Fix.POS_Y_MENU-50, totalWidth, 500);
 	}
 	
 	public int getSelect() {
@@ -81,8 +86,5 @@ public class MenuPanel extends MyPanel{
 	}
 	
 	public void testF1() {
-		System.out.println("test en cours !");
-		InfoPanel test= new InfoPanel(wd);
-		this.add(test);
 	}
 }
