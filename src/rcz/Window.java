@@ -10,8 +10,8 @@ public class Window extends JFrame{
 	
 	private static int nbInstance=0;
 	
-	PrincipalPanel pPan;
-	JPanel activePanel;
+	private PrincipalPanel pPan;
+	private JPanel activePanel;
 	boolean exit=false;
 	
 	public Window() {

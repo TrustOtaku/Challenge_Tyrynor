@@ -29,13 +29,14 @@ public class MenuPanel extends MyPanel{
 		select= 0;
 		needSizeCalculation=true;
 		this.initializeType(type);
+		this.repaint();
 	}
 	
 	public void paintComponent(Graphics g) {
 		if(needSizeCalculation)
 			this.displaySizeCalculation(g);
-		this.drawTitleAndChoices(g);
 		this.drawMenuBackground(g);
+		this.drawTitleAndChoices(g);
 		this.testMissingPixels(g);
 	}
 	
@@ -62,7 +63,7 @@ public class MenuPanel extends MyPanel{
 		
 		selectWidth= g.getFontMetrics(Fix.DEFAULT_FONT).stringWidth(">");
 		
-		needSizeCalculation=false;
+		//needSizeCalculation=false;
 	}
 	
 	private void drawTitleAndChoices(Graphics g) {
@@ -84,10 +85,11 @@ public class MenuPanel extends MyPanel{
 	}
 	
 	private void drawMenuBackground(Graphics g) {
-		g.drawRect(posXMenu, posYTitle-g.getFontMetrics(Fix.TITLE_FONT).getHeight(), totalWidth, totalHeight+g.getFontMetrics(Fix.TITLE_FONT).getHeight());
-		
 		g.setColor(Color.WHITE);
 		g.fillRect(0, 0, this.getWidth(), this.getHeight());
+		
+		g.setColor(Color.BLACK);
+		g.drawRect(posXMenu, posYTitle-g.getFontMetrics(Fix.TITLE_FONT).getHeight(), totalWidth, totalHeight+g.getFontMetrics(Fix.TITLE_FONT).getHeight());
 	}
 	
 	private void testMissingPixels(Graphics g) {
@@ -107,6 +109,7 @@ public class MenuPanel extends MyPanel{
 			break;
 		}
 	}
+	
 	public int getSelect() {
 		return select;
 	}
@@ -118,6 +121,7 @@ public class MenuPanel extends MyPanel{
 	public void enterPressed() {
 		switch(select) {
 		case 0:
+			//
 			break;
 		case 1:
 			break;

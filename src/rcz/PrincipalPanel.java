@@ -9,6 +9,7 @@ public class PrincipalPanel extends MyPanel {
 
 	MenuPanel main;
 	InfoPanel info;
+	TestPanel test;
 	
 	public PrincipalPanel(Window w) {
 		super(w, 0, 0, Fix.WINDOW_SIZE);
@@ -17,8 +18,6 @@ public class PrincipalPanel extends MyPanel {
 	}
 	
 	public void paintComponent(Graphics g) {
-		g.setColor(Color.RED);
-		g.fillRect(0, 0, 50, 50);
 	}
 	
 	public MenuPanel getMain() {
@@ -36,11 +35,6 @@ public class PrincipalPanel extends MyPanel {
 	}
 	
 	public void switchInfoVisibility() {
-		if(info.isVisible()) {
-			info.setVisible(false);
-		}
-		else {
-			info.setVisible(true);
-		}
+		info.setVisible(!info.isVisible());
 	}
 }

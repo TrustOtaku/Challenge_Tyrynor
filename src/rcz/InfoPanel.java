@@ -20,8 +20,8 @@ public class InfoPanel extends MyPanel{
 		t1= new Date().getTime();
 		nbOfRedraw++;
 		if(t1-t0>=1000) {
-			fps=(int)((double)nbOfRedraw/((double)(t1-t0)/1000));
-			t0+=1000;
+			fps=nbOfRedraw;
+			t0=t1;
 			nbOfRedraw=0;
 		}
 		

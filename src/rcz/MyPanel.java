@@ -5,7 +5,7 @@ import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Graphics;
 
-public class MyPanel extends JPanel {
+public abstract class MyPanel extends JPanel {
 
 	protected int sX, sY, pX, pY;
 	protected Window wd;
