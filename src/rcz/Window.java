@@ -27,7 +27,7 @@ public class Window extends JFrame{
 		this.setVisible(true);
 		pPan= new PrincipalPanel(this);
 		this.setContentPane(pPan);
-		this.setActivePanel(this.pPan.getMain());
+		this.setActivePanel(this.pPan.getMenu());
 	}
 	
 	public void exit() {

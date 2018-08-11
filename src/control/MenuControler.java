@@ -17,13 +17,13 @@ public class MenuControler implements KeyListener{
 	public void keyPressed(KeyEvent arg0) {
 		switch(arg0.getKeyCode()) {
 		case KeyEvent.VK_UP:
-			pan.getMain().setSelect(pan.getMain().getSelect()-1);
+			pan.getMenu().setSelect(pan.getMenu().getSelect()-1);
 			break;
 		case KeyEvent.VK_DOWN:
-			pan.getMain().setSelect(pan.getMain().getSelect()+1);
+			pan.getMenu().setSelect(pan.getMenu().getSelect()+1);
 			break;
 		case KeyEvent.VK_ENTER:
-			pan.getMain().enterPressed();
+			pan.getMenu().enterPressed();
 			break;
 		case KeyEvent.VK_F1:
 			pan.switchInfoVisibility();

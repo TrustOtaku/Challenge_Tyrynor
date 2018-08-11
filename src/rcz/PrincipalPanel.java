@@ -7,26 +7,26 @@ import fix.Fix;
 
 public class PrincipalPanel extends MyPanel {
 
-	MenuPanel main;
+	MenuPanel menu;
 	InfoPanel info;
 	TestPanel test;
 	
 	public PrincipalPanel(Window w) {
 		super(w, 0, 0, Fix.WINDOW_SIZE);
 		this.createInfo();
-		this.createMainMenu();
+		this.createMenu();
 	}
 	
 	public void paintComponent(Graphics g) {
 	}
 	
-	public MenuPanel getMain() {
-		return main;
+	public MenuPanel getMenu() {
+		return menu;
 	}
 
-	private void createMainMenu() {
-		main= new MenuPanel(wd, 0, 0, Fix.WINDOW_SIZE.width, Fix.WINDOW_SIZE.height, 'm');
-		this.add(main);
+	private void createMenu() {
+		menu= new MenuPanel(wd, 0, 0, Fix.WINDOW_SIZE.width, Fix.WINDOW_SIZE.height, 'm');
+		this.add(menu);
 	}
 	
 	private void createInfo() {
