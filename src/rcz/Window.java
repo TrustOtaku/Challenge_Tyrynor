@@ -12,7 +12,7 @@ public class Window extends JFrame{
 	
 	private PrincipalPanel pPan;
 	private JPanel activePanel;
-	boolean exit=false;
+	private boolean exit=false;
 	
 	public Window() {
 		super(Fix.WINDOW_NAME);

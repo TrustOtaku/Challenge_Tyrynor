@@ -6,7 +6,11 @@ import entity.Entity;
 
 public abstract class Creature extends Entity {
 
-	int life;
+	protected Creature(int posX, int posY) {
+		super(posX, posY);
+	}
+
+	private int life;
 	
 	@Override
 	protected abstract void draw(Graphics g);

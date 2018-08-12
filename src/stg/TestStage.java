@@ -5,7 +5,7 @@ import java.awt.Graphics;
 
 public class TestStage extends Stage {
 
-	protected TestStage(int x, int y) {
+	public TestStage(int x, int y) {
 		super(x, y);
 	}
 

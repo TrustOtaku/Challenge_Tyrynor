@@ -5,6 +5,10 @@ import java.awt.Graphics;
 
 public class Player extends Creature {
 
+	protected Player(int posX, int posY) {
+		super(posX, posY);
+	}
+
 	@Override
 	protected void draw(Graphics g) {
 		g.setColor(Color.BLACK);

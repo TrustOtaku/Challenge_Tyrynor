@@ -1,9 +1,11 @@
 package stg;
 
+import java.awt.Graphics;
+
 public abstract class Stage {
 
-	int sX, sY;
-	short[][] tilesGrid;
+	protected int sX, sY;
+	protected short[][] tilesGrid;
 	
 	protected Stage(int x,int y)
 	{
@@ -13,4 +15,6 @@ public abstract class Stage {
 	}
 	
 	protected abstract void generateGrid();
+	
+	public abstract void showQuartering(Graphics g);
 }
