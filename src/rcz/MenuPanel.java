@@ -24,12 +24,11 @@ public class MenuPanel extends MyPanel{
 	private int posYChoices;
 	private int selectWidth;
 	
-	public MenuPanel(Window w, int p_X, int p_Y, int s_X, int s_Y, char type) {
-		super(w, p_X, p_Y, s_X, s_Y);
+	public MenuPanel(int p_X, int p_Y, int s_X, int s_Y, char type) {
+		super(p_X, p_Y, s_X, s_Y);
 		select= 0;
 		needSizeCalculation=true;
 		this.initializeType(type);
-		this.repaint();
 	}
 	
 	public void paintComponent(Graphics g) {
@@ -126,7 +125,7 @@ public class MenuPanel extends MyPanel{
 		case 1:
 			break;
 		case 2:
-			wd.exit();
+			Window.getInstance().exit();
 		}
 	}
 	

@@ -8,26 +8,27 @@ import control.MenuControler;
 
 public class Window extends JFrame{
 	
-	private static int nbInstance=0;
+	private static Window instance;//Singleton
 	
-	private PrincipalPanel pPan;
 	private JPanel activePanel;
 	private boolean exit=false;
 	
-	public Window() {
+	private Window() {
 		super(Fix.WINDOW_NAME);
 		this.setSize(Fix.WINDOW_SIZE);
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.setExtendedState(JFrame.MAXIMIZED_BOTH);
 		
-		nbInstance++;
-		if(nbInstance!=1) {
-			System.exit(0);
-		}
 		this.setVisible(true);
-		pPan= new PrincipalPanel(this);
-		this.setContentPane(pPan);
-		this.setActivePanel(this.pPan.getMenu());
+		this.setContentPane(PrincipalPanel.getInstance());
+		this.setActivePanel(PrincipalPanel.getInstance().getMenu());
+	}
+	
+	public static Window getInstance() {
+		if(instance==null) {
+			instance= new Window();
+		}
+		return instance;
 	}
 	
 	public void exit() {
@@ -37,7 +38,7 @@ public class Window extends JFrame{
 	public void loop() {
 		while(!exit) {
 			try {
-				pPan.repaint();
+				PrincipalPanel.getInstance().repaint();
 				Thread.sleep((int)(1000/Fix.TARGETED_FPS));
 			}
 			catch (Exception e) {
@@ -56,7 +57,7 @@ public class Window extends JFrame{
 		
 		switch(activePanel.getClass().getName()) {
 		case "rcz.MenuPanel":
-			this.addKeyListener(new MenuControler(pPan));
+			this.addKeyListener(new MenuControler());
 			break;
 		}
 	}

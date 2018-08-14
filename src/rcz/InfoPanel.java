@@ -10,8 +10,8 @@ public class InfoPanel extends MyPanel{
 	int fps;
 	long t0, t1;
 	
-	protected InfoPanel(Window w) {
-		super(w, 0, 0, 128, 64);
+	protected InfoPanel() {
+		super(0, 0, 128, 64);
 		t0= new Date().getTime();
 		nbOfRedraw=0;
 	}

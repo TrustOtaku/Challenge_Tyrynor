@@ -11,8 +11,8 @@ public class GamePanel extends MyPanel {
 	private Stage stg;
 	private Player p;
 	
-	protected GamePanel(Window w, int tilesX, int tilesY) {
-		super(w, 0, 0, 64*tilesX, 64*tilesY);
+	protected GamePanel(int tilesX, int tilesY) {
+		super(0, 0, 64*tilesX, 64*tilesY);
 		tX= tilesX;
 		tY= tilesY;
 		Stage stg= new TestStage(tX, tY);

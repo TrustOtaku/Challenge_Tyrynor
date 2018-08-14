@@ -6,27 +6,27 @@ import java.awt.event.KeyListener;
 import rcz.PrincipalPanel;
 
 public class MenuControler implements KeyListener{
-
-	private PrincipalPanel pan;
 	
-	public MenuControler(PrincipalPanel p) {
-		pan= p;
+	private PrincipalPanel pPan;
+	
+	public MenuControler() {
+		pPan= PrincipalPanel.getInstance();
 	}
 	
 	@Override
 	public void keyPressed(KeyEvent arg0) {
 		switch(arg0.getKeyCode()) {
 		case KeyEvent.VK_UP:
-			pan.getMenu().setSelect(pan.getMenu().getSelect()-1);
+			pPan.getMenu().setSelect(pPan.getMenu().getSelect()-1);
 			break;
 		case KeyEvent.VK_DOWN:
-			pan.getMenu().setSelect(pan.getMenu().getSelect()+1);
+			pPan.getMenu().setSelect(pPan.getMenu().getSelect()+1);
 			break;
 		case KeyEvent.VK_ENTER:
-			pan.getMenu().enterPressed();
+			pPan.getMenu().enterPressed();
 			break;
 		case KeyEvent.VK_F1:
-			pan.switchInfoVisibility();
+			pPan.switchInfoVisibility();
 		}
 		
 	}
