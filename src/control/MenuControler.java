@@ -10,7 +10,7 @@ public class MenuControler implements KeyListener{
 	private PrincipalPanel pPan;
 	
 	public MenuControler() {
-		pPan= PrincipalPanel.getInstance();
+		pPan= PrincipalPanel.getInstance();//trop de getInstance sinon...
 	}
 	
 	@Override

@@ -44,9 +44,25 @@ public class PrincipalPanel extends MyPanel {
 	}
 	
 	private void createGame() {
-		game= new GamePanel(32, 32);
+		game= new GamePanel();
 		game.setVisible(false);
 		this.add(game);
+	}
+	
+	public void changeMenuType(char type) {
+		this.remove(menu);
+		switch(type) {
+		case 'm':
+			menu= new MainMenu(0, 0, Fix.WINDOW_SIZE.width, Fix.WINDOW_SIZE.height);
+			break;
+		case 'o':
+			menu= new OptionMenu(0, 0, Fix.WINDOW_SIZE.width, Fix.WINDOW_SIZE.height);
+			break;
+		case 'p':
+			menu= new PauseMenu(0, 0, Fix.WINDOW_SIZE.width, Fix.WINDOW_SIZE.height);
+			break;
+		}
+		this.add(menu);
 	}
 	
 	public void switchInfoVisibility() {

@@ -12,7 +12,7 @@ public abstract class MenuPanel extends MyPanel{
 	protected String title;//En-tete du menu
 	protected String[] choice;//liste des choix possibles
 	protected int select;//choix sur lequel on est positionné
-	private boolean needSizeCalculation;
+	protected boolean needSizeCalculation;
 	
 	private int strWidth;//longueur en pixels d une str
 	
@@ -28,7 +28,6 @@ public abstract class MenuPanel extends MyPanel{
 	public MenuPanel(int p_X, int p_Y, int s_X, int s_Y) {
 		super(p_X, p_Y, s_X, s_Y);
 		select= 0;
-		needSizeCalculation=true;
 	}
 	
 	//------- GRAPHICS -------//

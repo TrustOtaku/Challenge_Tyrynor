@@ -1,5 +1,6 @@
 package rcz.menu;
 
+import rcz.PrincipalPanel;
 import rcz.Window;
 
 public class MainMenu extends MenuPanel {
@@ -11,6 +12,7 @@ public class MainMenu extends MenuPanel {
 		choice[0]= "Play";
 		choice[1]= "Options";
 		choice[2]= "Exit";
+		needSizeCalculation=true;
 	}
 
 	@Override
@@ -19,6 +21,7 @@ public class MainMenu extends MenuPanel {
 		case 0:
 			break;
 		case 1:
+			PrincipalPanel.getInstance().changeMenuType('o');
 			break;
 		case 2:
 			Window.getInstance().exit();

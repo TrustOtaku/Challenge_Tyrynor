@@ -1,5 +1,7 @@
 package rcz.menu;
 
+import rcz.PrincipalPanel;
+
 public class PauseMenu extends MenuPanel {
 
 	public PauseMenu(int p_X, int p_Y, int s_X, int s_Y) {
@@ -10,11 +12,21 @@ public class PauseMenu extends MenuPanel {
 		choice[1]= "Options";
 		choice[2]= "Save";
 		choice[3]= "Back";
+		needSizeCalculation=true;
 	}
 
 	@Override
 	public void enterPressed() {
-		// TODO Auto-generated method stub
+		switch(select) {
+		case 0:
+			break;
+		case 1:
+			break;
+		case 2:
+			break;
+		case 3:
+			break;
+		}
 
 	}
 
