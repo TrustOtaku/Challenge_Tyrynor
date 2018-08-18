@@ -22,4 +22,5 @@ public abstract class MyPanel extends JPanel {
 	protected MyPanel(int p_X, int p_Y, Dimension d) {
 		this(p_X ,p_Y ,d.width ,d.height);
 	}
+	
 }

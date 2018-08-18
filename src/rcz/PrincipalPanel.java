@@ -4,6 +4,7 @@ import java.awt.Color;
 import java.awt.Graphics;
 
 import fix.Fix;
+import rcz.menu.*;
 
 public class PrincipalPanel extends MyPanel {
 
@@ -13,11 +14,12 @@ public class PrincipalPanel extends MyPanel {
 	private InfoPanel info;
 	private GamePanel game;
 	private TestPanel test;
-	Window wd;
 	
 	private PrincipalPanel() {
 		super(0, 0, Fix.WINDOW_SIZE);
-		this.createInfo();
+		info= new InfoPanel();
+		info.setVisible(false);
+		this.add(info);//Doit etre ajouter en premier pour avoir la priorité sur l affichage
 		this.createMenu();
 		this.createGame();
 	}
@@ -36,15 +38,9 @@ public class PrincipalPanel extends MyPanel {
 	}
 
 	private void createMenu() {
-		menu= new MenuPanel(0, 0, Fix.WINDOW_SIZE.width, Fix.WINDOW_SIZE.height, 'm');
+		menu= new MainMenu(0, 0, Fix.WINDOW_SIZE.width, Fix.WINDOW_SIZE.height);
 		menu.setVisible(true);
 		this.add(menu);
-	}
-	
-	private void createInfo() {
-		info= new InfoPanel();
-		info.setVisible(false);
-		this.add(info);
 	}
 	
 	private void createGame() {

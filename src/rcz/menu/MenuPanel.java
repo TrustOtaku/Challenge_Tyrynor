@@ -1,16 +1,17 @@
-package rcz;
+package rcz.menu;
 
 import java.awt.Color;
 import java.awt.Graphics;
 
 import fix.Fix;
+import rcz.MyPanel;
 
 
-public class MenuPanel extends MyPanel{
+public abstract class MenuPanel extends MyPanel{
 
-	private String title;//En-tete du menu
-	private String[] choice;//liste des choix possibles
-	private int select;//choix sur lequel on est positionné
+	protected String title;//En-tete du menu
+	protected String[] choice;//liste des choix possibles
+	protected int select;//choix sur lequel on est positionné
 	private boolean needSizeCalculation;
 	
 	private int strWidth;//longueur en pixels d une str
@@ -24,13 +25,13 @@ public class MenuPanel extends MyPanel{
 	private int posYChoices;
 	private int selectWidth;
 	
-	public MenuPanel(int p_X, int p_Y, int s_X, int s_Y, char type) {
+	public MenuPanel(int p_X, int p_Y, int s_X, int s_Y) {
 		super(p_X, p_Y, s_X, s_Y);
 		select= 0;
 		needSizeCalculation=true;
-		this.initializeType(type);
 	}
 	
+	//------- GRAPHICS -------//
 	public void paintComponent(Graphics g) {
 		if(needSizeCalculation)
 			this.displaySizeCalculation(g);
@@ -62,7 +63,7 @@ public class MenuPanel extends MyPanel{
 		
 		selectWidth= g.getFontMetrics(Fix.DEFAULT_FONT).stringWidth(">");
 		
-		//needSizeCalculation=false;
+		needSizeCalculation=false;
 	}
 	
 	private void drawTitleAndChoices(Graphics g) {
@@ -95,38 +96,17 @@ public class MenuPanel extends MyPanel{
 		g.setColor(Color.RED);
 		g.fillRect(this.getWidth()-2, this.getHeight()-65, 1, 1);
 	}
+
+	//------- METHODS -------//
+	public abstract void enterPressed();
 	
-	private void initializeType(char type) {
-		switch(type) {
-		case 'm':
-			title= "Menu";
-			choice= Fix.MAIN_MENU;
-			break;
-		case 'p':
-			title= "Pause";
-			choice= Fix.PAUSE_MENU;
-			break;
-		}
-	}
-	
+	//------- SETTERS & GETTERS -------//
 	public int getSelect() {
 		return select;
 	}
-	
+		
 	public void setSelect(int s) {
 		select= (s+3)%choice.length;
 	}
-	
-	public void enterPressed() {
-		switch(select) {
-		case 0:
-			//
-			break;
-		case 1:
-			break;
-		case 2:
-			Window.getInstance().exit();
-		}
-	}
-	
+		
 }

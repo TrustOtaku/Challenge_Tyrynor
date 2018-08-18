@@ -56,7 +56,7 @@ public class Window extends JFrame{
 		activePanel=pan;
 		
 		switch(activePanel.getClass().getName()) {
-		case "rcz.MenuPanel":
+		case "rcz.menu.MainMenu":
 			this.addKeyListener(new MenuControler());
 			break;
 		}
