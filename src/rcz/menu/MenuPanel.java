@@ -105,7 +105,7 @@ public abstract class MenuPanel extends MyPanel{
 	}
 		
 	public void setSelect(int s) {
-		select= (s+3)%choice.length;
+		select= (s+choice.length)%choice.length;
 	}
 		
 }

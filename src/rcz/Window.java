@@ -56,7 +56,10 @@ public class Window extends JFrame{
 		activePanel=pan;
 		
 		switch(activePanel.getClass().getName()) {
+		case "rcz.menu.PauseMenu":
 		case "rcz.menu.MainMenu":
+		case "rcz.menu.OptionMenu":
+		case "rcz.menu.GameSelectMenu":
 			this.addKeyListener(new MenuControler());
 			break;
 		}

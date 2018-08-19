@@ -61,9 +61,14 @@ public class PrincipalPanel extends MyPanel {
 		case 'p':
 			menu= new PauseMenu(0, 0, Fix.WINDOW_SIZE.width, Fix.WINDOW_SIZE.height);
 			break;
+		case 'g':
+			menu= new GameSelectMenu(0, 0, Fix.WINDOW_SIZE.width, Fix.WINDOW_SIZE.height);
+			break;
 		}
 		this.add(menu);
 	}
+	
+	//public void launchGame
 	
 	public void switchInfoVisibility() {
 		info.setVisible(!info.isVisible());

@@ -19,6 +19,7 @@ public class MainMenu extends MenuPanel {
 	public void enterPressed() {
 		switch(select) {
 		case 0:
+			PrincipalPanel.getInstance().changeMenuType('g');
 			break;
 		case 1:
 			PrincipalPanel.getInstance().changeMenuType('o');
