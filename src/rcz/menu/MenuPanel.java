@@ -25,8 +25,8 @@ public abstract class MenuPanel extends MyPanel{
 	private int posYChoices;
 	private int selectWidth;
 	
-	public MenuPanel(int p_X, int p_Y, int s_X, int s_Y) {
-		super(p_X, p_Y, s_X, s_Y);
+	public MenuPanel() {
+		super(0, 0, Fix.WINDOW_SIZE.width, Fix.WINDOW_SIZE.height);
 		select= 0;
 	}
 	

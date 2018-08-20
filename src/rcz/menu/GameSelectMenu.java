@@ -1,13 +1,15 @@
 package rcz.menu;
 
+import fix.Fix;
+import rcz.GamePanel;
 import rcz.PrincipalPanel;
 
 public class GameSelectMenu extends MenuPanel {
 
 	private int nbSaves;
 	
-	public GameSelectMenu(int p_X, int p_Y, int s_X, int s_Y) {
-		super(p_X, p_Y, s_X, s_Y);
+	public GameSelectMenu() {
+		super();
 		nbSaves= 0; //TO DO: load number of saves
 		title= "Select a Game";
 		choice= new String[nbSaves+2];
@@ -24,10 +26,10 @@ public class GameSelectMenu extends MenuPanel {
 		}
 		else {
 			if(select==nbSaves) {
-				//TO DO: Launch a new game
+				PrincipalPanel.getInstance().setGamePanel(new GamePanel());;
 			}
 			else {
-				PrincipalPanel.getInstance().changeMenuType('m');
+				PrincipalPanel.getInstance().setMenuPanel(new MainMenu());
 			}
 		}
 	}

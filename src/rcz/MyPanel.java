@@ -7,12 +7,10 @@ import java.awt.Graphics;
 
 public abstract class MyPanel extends JPanel {
 
-	protected int sX, sY, pX, pY;
+	protected int pX, pY;
 	
-	protected MyPanel(int p_X, int p_Y, int s_X, int s_Y) {
+	protected MyPanel(int p_X, int p_Y, int sX, int sY) {
 		this.setLayout(null);
-		sX=s_X;
-		sY=s_Y;
 		pX=p_X;
 		pY=p_Y;
 		this.setSize(sX,sY);

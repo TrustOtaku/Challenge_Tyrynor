@@ -1,27 +1,31 @@
 package rcz;
 
+import java.awt.event.KeyListener;
+
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
 import fix.Fix;
-import control.MenuControler;
+import control.*;
 
 public class Window extends JFrame{
 	
-	private static Window instance;//Singleton
+	private static Window instance;//------- Singleton -------//
 	
 	private JPanel activePanel;
 	private boolean exit=false;
+	private KeyListener controler;
 	
 	private Window() {
 		super(Fix.WINDOW_NAME);
+		System.out.println("Window()");
 		this.setSize(Fix.WINDOW_SIZE);
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.setExtendedState(JFrame.MAXIMIZED_BOTH);
 		
 		this.setVisible(true);
 		this.setContentPane(PrincipalPanel.getInstance());
-		this.setActivePanel(PrincipalPanel.getInstance().getMenu());
+		this.setActivePanel(PrincipalPanel.getInstance().getMenuPanel());
 	}
 	
 	public static Window getInstance() {
@@ -53,15 +57,23 @@ public class Window extends JFrame{
 	
 	//Setters qui add un nouveau KeyListener en consequence
 	public void setActivePanel(JPanel pan) {
-		activePanel=pan;
+		if(activePanel!=null) {
+			activePanel.setVisible(false);
+		}
+		activePanel= pan;
+		this.removeKeyListener(controler);
 		
 		switch(activePanel.getClass().getName()) {
 		case "rcz.menu.PauseMenu":
 		case "rcz.menu.MainMenu":
 		case "rcz.menu.OptionMenu":
 		case "rcz.menu.GameSelectMenu":
-			this.addKeyListener(new MenuControler());
+			controler= new MenuControler();
+			this.addKeyListener(controler);
 			break;
+		case "rcz.GamePanel":
+			controler= new GameControler();
+			this.addKeyListener(controler);
 		}
 	}
 }

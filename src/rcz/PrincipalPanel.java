@@ -8,7 +8,7 @@ import rcz.menu.*;
 
 public class PrincipalPanel extends MyPanel {
 
-	private static PrincipalPanel instance;//Singleton
+	private static PrincipalPanel instance;//------- Singleton -------//
 	
 	private MenuPanel menu;
 	private InfoPanel info;
@@ -17,11 +17,13 @@ public class PrincipalPanel extends MyPanel {
 	
 	private PrincipalPanel() {
 		super(0, 0, Fix.WINDOW_SIZE);
+		System.out.println("PrincipalPanel()");
 		info= new InfoPanel();
 		info.setVisible(false);
 		this.add(info);//Doit etre ajouter en premier pour avoir la priorité sur l affichage
-		this.createMenu();
-		this.createGame();
+		menu= new MainMenu();
+		this.add(menu);
+		menu.setVisible(true);
 	}
 	
 	public static PrincipalPanel getInstance() {
@@ -32,45 +34,31 @@ public class PrincipalPanel extends MyPanel {
 	
 	public void paintComponent(Graphics g) {
 	}
-	
-	public MenuPanel getMenu() {
+
+	//------- SETTERS & GETTERS -------//
+	public MenuPanel getMenuPanel() {
 		return menu;
 	}
-
-	private void createMenu() {
-		menu= new MainMenu(0, 0, Fix.WINDOW_SIZE.width, Fix.WINDOW_SIZE.height);
+	
+	public void setMenuPanel(MenuPanel m) {
+		menu= m;
 		menu.setVisible(true);
 		this.add(menu);
+		Window.getInstance().setActivePanel(menu);
 	}
 	
-	private void createGame() {
-		game= new GamePanel();
-		game.setVisible(false);
+	public GamePanel getGamePanel() {
+		return game;
+	}
+	
+	public void setGamePanel(GamePanel g) {
+		game= g;
+		game.setVisible(true);
 		this.add(game);
+		Window.getInstance().setActivePanel(game);
 	}
 	
-	public void changeMenuType(char type) {
-		this.remove(menu);
-		switch(type) {
-		case 'm':
-			menu= new MainMenu(0, 0, Fix.WINDOW_SIZE.width, Fix.WINDOW_SIZE.height);
-			break;
-		case 'o':
-			menu= new OptionMenu(0, 0, Fix.WINDOW_SIZE.width, Fix.WINDOW_SIZE.height);
-			break;
-		case 'p':
-			menu= new PauseMenu(0, 0, Fix.WINDOW_SIZE.width, Fix.WINDOW_SIZE.height);
-			break;
-		case 'g':
-			menu= new GameSelectMenu(0, 0, Fix.WINDOW_SIZE.width, Fix.WINDOW_SIZE.height);
-			break;
-		}
-		this.add(menu);
-	}
-	
-	//public void launchGame
-	
-	public void switchInfoVisibility() {
-		info.setVisible(!info.isVisible());
+	public InfoPanel getInfoPanel() {
+		return info;
 	}
 }

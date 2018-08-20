@@ -5,11 +5,19 @@ import java.awt.Graphics;
 
 public class Player extends Creature {
 
-	protected Player(int posX, int posY) {
+	private static Player instance;//------- Singleton -------//
+	
+	private Player(int posX, int posY) {
 		super(posX, posY);
 	}
-
-	@Override
+	
+	public static Player getInstance() {
+		if(instance==null) {
+			instance= new Player(0, 0);//TO DO: real var for Player(x, y)
+		}
+		return instance;
+	}
+	
 	protected void draw(Graphics g) {
 		g.setColor(Color.BLACK);
 		g.drawOval(x, y, 32, 32);

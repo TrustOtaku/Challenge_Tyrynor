@@ -4,14 +4,12 @@ import java.awt.Graphics;
 
 public abstract class Stage {
 
-	protected int sX, sY;
-	protected short[][] tilesGrid;
+	protected int tX, tY;
 	
 	protected Stage(int x,int y)
 	{
-		sX= x;
-		sY= y;
-		tilesGrid= new short[x][y];
+		tX= x;
+		tY= y;
 	}
 	
 	protected abstract void generateGrid();

@@ -5,8 +5,8 @@ import rcz.Window;
 
 public class OptionMenu extends MenuPanel {
 
-	public OptionMenu(int p_X, int p_Y, int s_X, int s_Y) {
-		super(p_X, p_Y, s_X, s_Y);
+	public OptionMenu() {
+		super();
 		title= "Options";
 		choice= new String[5];
 		choice[0]= "Options not implemented";
@@ -27,11 +27,12 @@ public class OptionMenu extends MenuPanel {
 			break;
 		case 2:
 			choice[2]= (choice[2]=="-")?"+":"-";
+			break;
 		case 3:
 			choice[3]= "Are you stupid ?";
 			break;
 		default:
-			PrincipalPanel.getInstance().changeMenuType('m');
+			PrincipalPanel.getInstance().setMenuPanel(new MainMenu());
 		}
 	}
 

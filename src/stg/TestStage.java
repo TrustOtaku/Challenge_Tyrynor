@@ -15,8 +15,8 @@ public class TestStage extends Stage {
 	}
 
 	 public void showQuartering(Graphics g) {
-		 for(int i=0; i<sX; i++) {
-			 for(int j=0; j<sY; j++) {
+		 for(int i=0; i<tX; i++) {
+			 for(int j=0; j<tY; j++) {
 				 g.setColor(((i+j)%2==0)?Color.RED:Color.BLUE);
 				 g.drawRect(64*i, 64*j, 64, 64);
 			 }

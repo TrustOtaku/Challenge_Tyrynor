@@ -1,12 +1,15 @@
 package rcz.menu;
 
+import fix.Fix;
+import rcz.GamePanel;
 import rcz.PrincipalPanel;
 import rcz.Window;
 
 public class MainMenu extends MenuPanel {
 
-	public MainMenu(int p_X, int p_Y, int s_X, int s_Y) {
-		super(p_X, p_Y, s_X, s_Y);
+	public MainMenu() {
+		super();
+		System.out.println("MainMenu()");
 		title= "Menu";
 		choice= new String[3];
 		choice[0]= "Play";
@@ -19,10 +22,10 @@ public class MainMenu extends MenuPanel {
 	public void enterPressed() {
 		switch(select) {
 		case 0:
-			PrincipalPanel.getInstance().changeMenuType('g');
+			PrincipalPanel.getInstance().setMenuPanel(new GameSelectMenu());
 			break;
 		case 1:
-			PrincipalPanel.getInstance().changeMenuType('o');
+			PrincipalPanel.getInstance().setMenuPanel(new OptionMenu());
 			break;
 		case 2:
 			Window.getInstance().exit();
