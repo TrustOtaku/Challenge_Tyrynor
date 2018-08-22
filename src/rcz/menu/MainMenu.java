@@ -9,7 +9,6 @@ public class MainMenu extends MenuPanel {
 
 	public MainMenu() {
 		super();
-		System.out.println("MainMenu()");
 		title= "Menu";
 		choice= new String[3];
 		choice[0]= "Play";

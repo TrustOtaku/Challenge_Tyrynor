@@ -17,7 +17,6 @@ public class PrincipalPanel extends MyPanel {
 	
 	private PrincipalPanel() {
 		super(0, 0, Fix.WINDOW_SIZE);
-		System.out.println("PrincipalPanel()");
 		info= new InfoPanel();
 		info.setVisible(false);
 		this.add(info);//Doit etre ajouter en premier pour avoir la priorité sur l affichage

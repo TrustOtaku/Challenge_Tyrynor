@@ -20,7 +20,7 @@ public class MenuControler implements KeyListener{
 			PrincipalPanel.getInstance().getMenuPanel().enterPressed();
 			break;
 		case KeyEvent.VK_F1:
-			PrincipalPanel.getInstance().getInfoPanel().setVisible(!PrincipalPanel.getInstance().getInfoPanel().isVisible());;
+			PrincipalPanel.getInstance().getInfoPanel().setVisible(!PrincipalPanel.getInstance().getInfoPanel().isVisible());
 		}
 	}
 

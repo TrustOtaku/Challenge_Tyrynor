@@ -1,5 +1,6 @@
 package rcz;
 
+import java.awt.Toolkit;
 import java.awt.event.KeyListener;
 
 import javax.swing.JFrame;
@@ -18,7 +19,7 @@ public class Window extends JFrame{
 	
 	private Window() {
 		super(Fix.WINDOW_NAME);
-		System.out.println("Window()");
+		this.setResizable(false);
 		this.setSize(Fix.WINDOW_SIZE);
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.setExtendedState(JFrame.MAXIMIZED_BOTH);
@@ -29,6 +30,7 @@ public class Window extends JFrame{
 	}
 	
 	public static Window getInstance() {
+		
 		if(instance==null) {
 			instance= new Window();
 		}

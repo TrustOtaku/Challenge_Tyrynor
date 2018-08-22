@@ -7,7 +7,7 @@ public class Grid {
 	private String[][] tiles;
 	
 	private Grid() {//TO DO: real constructor Grid(stage)
-		tiles= new String[16][8];
+		tiles= new String[16][12];
 	}
 	
 	public static Grid getInstance() {
