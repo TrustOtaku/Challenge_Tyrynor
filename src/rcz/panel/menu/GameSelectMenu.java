@@ -1,8 +1,8 @@
-package rcz.menu;
+package rcz.panel.menu;
 
 import fix.Fix;
-import rcz.GamePanel;
-import rcz.PrincipalPanel;
+import rcz.panel.GamePanel;
+import rcz.panel.PrincipalPanel;
 
 public class GameSelectMenu extends MenuPanel {
 

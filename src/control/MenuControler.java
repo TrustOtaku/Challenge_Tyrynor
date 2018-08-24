@@ -3,7 +3,7 @@ package control;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
-import rcz.PrincipalPanel;
+import rcz.panel.PrincipalPanel;
 
 public class MenuControler implements KeyListener{
 	

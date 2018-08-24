@@ -1,7 +1,7 @@
-package rcz.menu;
+package rcz.panel.menu;
 
-import rcz.PrincipalPanel;
 import rcz.Window;
+import rcz.panel.PrincipalPanel;
 
 public class OptionMenu extends MenuPanel {
 

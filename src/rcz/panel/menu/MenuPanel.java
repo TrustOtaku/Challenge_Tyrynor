@@ -1,10 +1,10 @@
-package rcz.menu;
+package rcz.panel.menu;
 
 import java.awt.Color;
 import java.awt.Graphics;
 
 import fix.Fix;
-import rcz.MyPanel;
+import rcz.panel.MyPanel;
 
 
 public abstract class MenuPanel extends MyPanel{

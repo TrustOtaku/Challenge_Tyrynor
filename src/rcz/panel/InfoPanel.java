@@ -1,4 +1,4 @@
-package rcz;
+package rcz.panel;
 
 import java.awt.Color;
 import java.awt.Graphics;

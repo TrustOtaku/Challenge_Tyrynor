@@ -1,4 +1,4 @@
-package rcz;
+package rcz.panel;
 
 import javax.swing.JPanel;
 import java.awt.Color;

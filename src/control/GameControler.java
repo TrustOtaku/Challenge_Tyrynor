@@ -4,8 +4,8 @@ import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
 import entity.creatures.Player;
-import rcz.PrincipalPanel;
-import rcz.menu.PauseMenu;
+import rcz.panel.PrincipalPanel;
+import rcz.panel.menu.PauseMenu;
 
 public class GameControler implements KeyListener {
 

@@ -7,6 +7,7 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 
 import fix.Fix;
+import rcz.panel.PrincipalPanel;
 import control.*;
 
 public class Window extends JFrame{
@@ -66,14 +67,14 @@ public class Window extends JFrame{
 		this.removeKeyListener(controler);
 		
 		switch(activePanel.getClass().getName()) {
-		case "rcz.menu.PauseMenu":
-		case "rcz.menu.MainMenu":
-		case "rcz.menu.OptionMenu":
-		case "rcz.menu.GameSelectMenu":
+		case "rcz.panel.menu.PauseMenu":
+		case "rcz.panel.menu.MainMenu":
+		case "rcz.panel.menu.OptionMenu":
+		case "rcz.panel.menu.GameSelectMenu":
 			controler= new MenuControler();
 			this.addKeyListener(controler);
 			break;
-		case "rcz.GamePanel":
+		case "rcz.panel.GamePanel":
 			controler= new GameControler();
 			this.addKeyListener(controler);
 		}

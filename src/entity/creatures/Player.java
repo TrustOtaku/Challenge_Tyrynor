@@ -22,7 +22,7 @@ public final class Player extends Creature {
 	public void draw(Graphics g) {
 		this.move();
 		g.setColor(Color.BLACK);
-		g.fillOval(x, y, 64, 64);
+		g.fillOval(x-32, y-32, 64, 64);
 	}
 
 	@Override
@@ -50,5 +50,8 @@ public final class Player extends Creature {
 	public void setMoveY(int dir) {
 		if(dir==-1 || dir==0 || dir==1)
 			moveY= dir;
+	}
+	
+	protected void setDistanceToPlayer() {
 	}
 }

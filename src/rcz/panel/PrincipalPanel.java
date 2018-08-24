@@ -1,10 +1,13 @@
-package rcz;
+package rcz.panel;
 
 import java.awt.Color;
 import java.awt.Graphics;
 
 import fix.Fix;
-import rcz.menu.*;
+import rcz.Window;
+import rcz.panel.menu.*;
+import rcz.panel.menu.MainMenu;
+import rcz.panel.menu.MenuPanel;
 
 public class PrincipalPanel extends MyPanel {
 

@@ -1,6 +1,6 @@
-package rcz.menu;
+package rcz.panel.menu;
 
-import rcz.PrincipalPanel;
+import rcz.panel.PrincipalPanel;
 
 public class PauseMenu extends MenuPanel {
 

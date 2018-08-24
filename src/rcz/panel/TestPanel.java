@@ -1,8 +1,10 @@
-package rcz;
+package rcz.panel;
 
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Graphics;
+
+import rcz.Window;
 
 public class TestPanel extends MyPanel {
 
