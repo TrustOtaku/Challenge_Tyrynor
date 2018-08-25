@@ -4,6 +4,7 @@ import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Toolkit;
 
+import entity.Projectile;
 import entity.creatures.Player;
 import rcz.TilesList;
 import stg.Grid;
@@ -29,7 +30,11 @@ public class GamePanel extends MyPanel {
 		
 		/*g.setColor(Color.GREEN); // DEV-TEST
 		this.fRect(g, 0, 0, 64, 64);*/
+		
 		Player.getInstance().draw(g);
+		for(Projectile p: Projectile.getProjectileStock()) {
+			p.draw(g);
+		}
 	}
 	
 	private void paintQuartering(Graphics g) {

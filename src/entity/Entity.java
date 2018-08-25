@@ -4,7 +4,7 @@ import java.awt.Graphics;
 
 public abstract class Entity {
 
-	protected int x, y;
+	protected double x, y;
 	protected int distanceToPlayer;
 	
 	protected Entity(int posX, int posY) {

@@ -2,6 +2,7 @@ package rcz;
 
 import java.awt.Toolkit;
 import java.awt.event.KeyListener;
+import java.awt.event.MouseListener;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -16,7 +17,8 @@ public class Window extends JFrame{
 	
 	private JPanel activePanel;
 	private boolean exit=false;
-	private KeyListener controler;
+	private KeyListener kbControler;
+	private MouseListener mzControler;
 	
 	private Window() {
 		super(Fix.WINDOW_NAME);
@@ -54,6 +56,11 @@ public class Window extends JFrame{
 		}
 	}
 	
+	//------- SETTERS & GETTERS -------//
+	public KeyListener getControler() {
+		return kbControler;
+	}
+	
 	public JPanel getActivePanel() {
 		return activePanel;
 	}
@@ -64,19 +71,22 @@ public class Window extends JFrame{
 			activePanel.setVisible(false);
 		}
 		activePanel= pan;
-		this.removeKeyListener(controler);
+		this.removeKeyListener(kbControler);
+		this.removeMouseListener(mzControler);
 		
 		switch(activePanel.getClass().getName()) {
 		case "rcz.panel.menu.PauseMenu":
 		case "rcz.panel.menu.MainMenu":
 		case "rcz.panel.menu.OptionMenu":
 		case "rcz.panel.menu.GameSelectMenu":
-			controler= new MenuControler();
-			this.addKeyListener(controler);
+			kbControler= new MenuControler();
+			this.addKeyListener(kbControler);
 			break;
 		case "rcz.panel.GamePanel":
-			controler= new GameControler();
-			this.addKeyListener(controler);
+			kbControler= new GameControler();
+			this.addKeyListener(kbControler);
+			mzControler= new MouseControler();
+			this.addMouseListener(mzControler);
 		}
 	}
 }

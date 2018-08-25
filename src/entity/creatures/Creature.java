@@ -6,7 +6,6 @@ import entity.Entity;
 
 public abstract class Creature extends Entity {
 	
-	protected double dX, dY;
 	protected int moveX, moveY, speed;
 	
  	protected Creature(int posX, int posY) {
